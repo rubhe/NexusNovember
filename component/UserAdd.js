@@ -15,7 +15,7 @@ function UserAdd() {
     const [users, setUsers] = useState([]);
     const [username, setUsername] = useState('');
 
-    const usersCollectionRef = collection(db, "MonthlyMeetData");
+    const usersCollectionRef = collection(db, "MonthlyMeetData2");
     const router = useRouter(); 
 
     
