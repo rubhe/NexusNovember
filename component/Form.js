@@ -57,10 +57,10 @@ function Form() {
       const cityRef = doc(db, 'MonthlyMeetData', userId);
       await setDoc(cityRef, data, { merge: true });
       console.log("Form data", data);
-
+      setformsubmit(true);
     }
 
-    setformsubmit(true);
+    // 
 
     // await addDoc(usersCollectionRef, data);
 
