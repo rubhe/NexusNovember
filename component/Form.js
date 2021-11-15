@@ -37,17 +37,16 @@ function Form() {
   const [formsubmit, setformsubmit] = useState(false)
 
 
-
   const CreatForm = async (event) => {
     event.preventDefault();
 
     const data = {
-      "What is the top most priority in your life?": onecheck,
-      "According to you, people work for ?": twocheck,
-      "Do you believe that you can help others?": threecheck,
-      "What do you prefer when it comes to helping others?": fourcheck,
-      "What kind of people you prefer to be with": fivecheck,
-      "According to you, which of the followings are important for growth?": sixcheck,
+      oneAns: onecheck,
+      twoAns: twocheck,
+      threeAns: threecheck,
+      fourAns: fourcheck,
+      fiveAns: fivecheck,
+      sixAns: sixcheck,
 
     };
     if (userId === "") {
@@ -165,6 +164,8 @@ function Form() {
   }, []);
 
   return (
+
+  <>
     <div>
       <div className="logo">
         <a
@@ -187,7 +188,7 @@ function Form() {
         error?<div className="error"><p>Please Select your name</p></div>:null
       }
           <div className="form-row">
-            <h2>Select Your Name ?</h2>
+            <h2>Select Your Name</h2>
             <br />
             <select onChange={getUserId} >
             <option selected >Select Name</option>
@@ -323,7 +324,7 @@ function Form() {
 
 
           <div className="checkbox-buttons">
-            <h2>4. What do you prefer when it comes to helping others? <span>*</span></h2>
+            <h2>4. What do you prefer when it comes to helping others? </h2>
             <ul>
               <li>
                 <input
@@ -375,7 +376,7 @@ function Form() {
           </div>
 
           <div className="radio-buttons">
-            <h2>5. What kind of people you prefer to be with?<span>*</span></h2>
+            <h2>5. What kind of people you prefer to be with?</h2>
             <ul>
               <li>
                 <input
@@ -438,7 +439,7 @@ function Form() {
                   name="questionFive"
                   type="radio"
                   onChange={questionFive}
-                  checked={fivecheck == 'answerFive'}
+                  checked={fivecheck == 'Employed'}
 
                 />
                 <label htmlFor="5E">Employed</label>
@@ -448,7 +449,7 @@ function Form() {
           </div>
 
           <div className="checkbox-buttons">
-            <h2>6. According to you, which of the followings are important for growth? <span>*</span></h2>
+            <h2>6. According to you, which of the followings are important for growth ?</h2>
 
             <ul>
               <li>
@@ -519,9 +520,15 @@ function Form() {
         </form>
       </div>
       }
-
     </div>
+
+        
+
+
+  </>
+  
   );
+ 
 }
 
 export default Form
